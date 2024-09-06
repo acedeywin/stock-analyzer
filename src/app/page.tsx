@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
           <StockTable data={stockData} />
         </>
       )}
-      <p>{error}</p>
+      <p className="text-center text-2xl text-red-500">{error}</p>
     </div>
   );
 };

@@ -22,7 +22,7 @@ const StockChart: React.FC<StockChartProps> = ({ data }) => {
     labels: data.map((d) => d.Date),
     datasets: [
       {
-        label: 'Open Price',
+        label: 'Opening Price',
         data: data.map((d) => d.open),
         borderColor: 'rgba(90, 90, 90,1)',
         fill: false,
@@ -40,7 +40,7 @@ const StockChart: React.FC<StockChartProps> = ({ data }) => {
         fill: false,
       },
       {
-        label: 'Close Price',
+        label: 'Closing Price',
         data: data.map((d) => d.close),
         borderColor: 'rgba(75,192,192,1)',
         fill: false,
@@ -49,7 +49,7 @@ const StockChart: React.FC<StockChartProps> = ({ data }) => {
         label: 'Daily Return (%)',
         data: data.map((d) => d.dailyReturn),
         borderColor: 'rgba(255,99,132,1)',
-        fill: true,
+        fill: false,
         yAxisID: 'y-axis-2',
       },
     ],
@@ -65,7 +65,7 @@ const StockChart: React.FC<StockChartProps> = ({ data }) => {
         type: 'linear' as const,
         position: 'right' as const,
         grid: {
-          drawOnChartArea: true,
+          drawOnChartArea: false,
         },
       },
     },
