@@ -24,10 +24,12 @@ const Pagination: React.FC<Paginationrops> = ({
    * @returns {Number} The total number of pages
    */
   const totalPages = (): number => Math.ceil(Object.keys(data).length / itemsPerPage);
+  
+  const paginationWindow = calculatePaginationWindow(totalPages, currentPage);
 
   return (
     <div className="mt-4 flex justify-center">
-      {calculatePaginationWindow(totalPages, currentPage).map((pageNumber) => (
+      {paginationWindow.map((pageNumber) => (
         <button
           key={pageNumber}
           onClick={() => handlePageChange(pageNumber)}

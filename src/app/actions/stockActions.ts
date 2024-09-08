@@ -46,9 +46,9 @@ export const getStockData = (
         // Once the file is fully read, resolve the promise with the filtered results
         resolve(results);
       })
-      .on('error', (err: Error) => {
+      .on('error', (error: Error) => {
         // If an error occurs, reject the promise with the error
-        reject(err);
+        reject(error);
       });
   });
 };
